@@ -31,7 +31,9 @@ main {
     border-radius: 20px;
     box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
     transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
-    &:nth-child(1), &:nth-child(2) {
+
+    &:nth-child(1),
+    &:nth-child(2) {
         left: 0;
         top: 0;
         width: 100%;
@@ -42,10 +44,22 @@ main {
         opacity: 1;
     }
 
-    &:nth-child(3) { left: 50%; }
-    &:nth-child(4) { left: calc(50% + 220px); }
-    &:nth-child(5) { left: calc(50% + 440px); }
-    &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+    &:nth-child(3) {
+        left: 50%;
+    }
+
+    &:nth-child(4) {
+        left: calc(50% + 220px);
+    }
+
+    &:nth-child(5) {
+        left: calc(50% + 440px);
+    }
+
+    &:nth-child(6) {
+        left: calc(50% + 660px);
+        opacity: 0;
+    }
 }
 
 .content {
@@ -73,7 +87,7 @@ main {
 
     & button {
         width: fit-content;
-        background-color: rgba(0,0,0,0.1);
+        background-color: rgba(0, 0, 0, 0.1);
         color: white;
         border: 2px solid;
         border-radius: 0.25rem;
@@ -93,6 +107,7 @@ main {
         filter: blur(5px);
         transform: translateY(calc(-50% + 75px));
     }
+
     100% {
         opacity: 1;
         filter: blur(0);
@@ -125,38 +140,113 @@ main {
 
 @media (width > 650px) and (width < 900px) {
     .content {
-        & .title { font-size: 1rem; }
-        & .description { font-size: 0.7rem; }
-        & button { font-size: 0.7rem; }
+        & .title {
+            font-size: 1rem;
+        }
+
+        & .description {
+            font-size: 0.7rem;
+        }
+
+        & button {
+            font-size: 0.7rem;
+        }
     }
 
     .item {
         width: 160px;
         height: 270px;
 
-        &:nth-child(3) { left: 50%; }
-        &:nth-child(4) { left: calc(50% + 170px); }
-        &:nth-child(5) { left: calc(50% + 340px); }
-        &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+        &:nth-child(3) {
+            left: 50%;
+        }
+
+        &:nth-child(4) {
+            left: calc(50% + 170px);
+        }
+
+        &:nth-child(5) {
+            left: calc(50% + 340px);
+        }
+
+        &:nth-child(6) {
+            left: calc(50% + 510px);
+            opacity: 0;
+        }
     }
 }
 
 @media (max-width: 650px) {
     .content {
-        & .title { font-size: 0.9rem; }
-        & .description { font-size: 0.65rem; }
-        & button { font-size: 0.7rem; }
+        & .title {
+            font-size: 0.9rem;
+        }
+
+        & .description {
+            font-size: 0.65rem;
+        }
+
+        & button {
+            font-size: 0.7rem;
+        }
     }
 
     .item {
         width: 160px;
         height: 270px;
 
-        &:nth-child(3) { left: 50%; }
-        &:nth-child(4) { left: calc(50% + 140px); }
-        &:nth-child(5) { left: calc(50% + 280px); }
-        &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+        &:nth-child(3) {
+            left: 50%;
+        }
+
+        &:nth-child(4) {
+            left: calc(50% + 140px);
+        }
+
+        &:nth-child(5) {
+            left: calc(50% + 280px);
+        }
+
+        &:nth-child(6) {
+            left: calc(50% + 420px);
+            opacity: 0;
+        }
     }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Adjust scrollbar width */
+    background-color: #2a2a2a;
+    /* Dark background for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    /* Darker color for the scrollbar thumb */
+    border-radius: 8px;
+    /* Round the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+    /* Slightly lighter on hover */
+}
+
+/* Optional: Hide the scrollbar corner (useful on both axes scrollbars) */
+::-webkit-scrollbar-corner {
+    background-color: #2a2a2a;
+}
+
+/* Add padding to prevent code from being cut off when scrolling */
+pre,
+code {
+    padding-right: 12px;
+    /* Add padding to leave space for the scrollbar */
+}
+
+#modal-title {
+    padding-bottom: 30px;
 }
 
 .modal {
@@ -168,10 +258,8 @@ main {
     height: 60%;
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    /* changed from flex */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     z-index: 10;
@@ -188,8 +276,12 @@ main {
 }
 
 .modal-content {
-    text-align: center;
+    position: relative;
+    text-align: left;
+    /* Force left alignment */
     width: 100%;
+    padding-top: 2rem;
+    /* So code isn't hidden under close button */
 }
 
 .modal-content .close {
@@ -199,4 +291,26 @@ main {
     font-size: 1.5rem;
     cursor: pointer;
     color: white;
+}
+
+.code-container {
+    margin-bottom: 20px;
+}
+
+.code-container h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+pre,
+code {
+    font-family: 'Courier New', monospace;
+    background: #1e1e1e;
+    color: #dcdcdc;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: pre-wrap;
 }

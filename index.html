@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css"
+  />    <link rel="stylesheet" href="styles.css">
     <title>Databricks Project Showcase</title>
 </head>
 
@@ -56,9 +59,7 @@
                     <h1 class="title">Code Highlights</h1>
                     <p class="description">Implemented a custom scraper and RAG system with Python to efficiently manage
                         and query large document sets.</p>
-                    <button
-                        onclick="showModal('Code Highlights', 'Showcase critical parts of the code, such as: Web scraping logic with BeautifulSoup. Recursive text splitting for efficient chunk management. Spark DataFrame operations for Delta tables and optimization.')">Read
-                        More</button>
+                        <button onclick="loadAllCodeSections()">Read More</button>
                 </div>
             </li>
         </ul>
@@ -67,17 +68,22 @@
             <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
         </nav>
 
-        <div id="modal" class="modal hidden">
+        <div id="modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2 id="modal-title"></h2>
-                <p id="modal-text"></p>
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h1 id="modal-title"></h1>
+              <p id="modal-text"></p>
             </div>
-        </div>
+          </div>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="scripts.js"></script>
+
     </main>
 </body>
 
