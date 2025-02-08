@@ -9,4 +9,16 @@ function activate(e) {
     }
 }
 
+function showModal(title, text) {
+    const modal = document.getElementById('modal');
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-text').textContent = text;
+    modal.classList.add('visible');
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('visible');
+}
+
 document.addEventListener('click', activate, false);

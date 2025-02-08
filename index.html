@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Image Slider</title>
+    <title>Databricks Project Showcase</title>
 </head>
+
 <body>
     <main>
         <ul class="slider">
+            <li class="item" style="background-image: url('Images/Image(5).jpg');">
+                <div class="content">
+                    <h1 class="title">Certification</h1>
+                    <p class="description">This project contributed to hands-on experience with Databricks and machine
+                        learning pipelines, enhancing certification qualifications.</p>
+                    <button
+                        onclick="showModal('Certification', 'Describe how this project aligns with Databricks certification objectives, such as: Working with Delta tables and Spark. Implementing scalable machine learning workflows. Building retrieval systems with enterprise tools.')">Read
+                        More</button>
+                </div>
+            </li>
             <li class="item" style="background-image: url('Images/Image(1).jpg');">
                 <div class="content">
-                    <h2 class="title">Project Overview</h2>
-                    <p class="description">Summary of the project.</p>
-                    <button>Read More</button>
+                    <h1 class="title">Project Overview</h1>
+                    <p class="description">Developed a chatbot application using LangChain and Databricks to perform
+                        Retrieval-Augmented Generation (RAG). The project integrates multiple tools to enhance
+                        information retrieval and data interaction.</p>
+                    <button
+                        onclick="showModal('Project Overview', 'Explain the purpose, motivation, and high-level workflow of the chatbot application, including key components like document loading, chunking, and retrieval.')">Read
+                        More</button>
                 </div>
             </li>
             <li class="item" style="background-image: url('Images/Image(2).jpg');">
                 <div class="content">
-                    <h2 class="title">Tools</h2>
-                    <p class="description">Brief overview of tools used (Databricks, APIs, machine learning tools, etc.).</p>
-                    <button>Read More</button>
+                    <h1 class="title">Tools</h1>
+                    <p class="description">Implemented a range of libraries and tools, including LangChain, Databricks,
+                        and OpenAI, to handle document processing, embeddings, and search capabilities.</p>
+                    <button
+                        onclick="showModal('Tools', 'Detail the various tools used in the project, such as: LangChain: For document chaining and RAG. OpenAI: For embeddings and conversational responses. Databricks: To manage data pipelines and delta tables. Additional libraries like BeautifulSoup and requests.')">Read
+                        More</button>
                 </div>
             </li>
             <li class="item" style="background-image: url('Images/Image(3).jpg');">
                 <div class="content">
-                    <h2 class="title">Use Cases</h2>
+                    <h1 class="title">Use Cases</h1>
                     <p class="description">Overview of real-world applications or problems solved.</p>
-                    <button>Read More</button>
+                    <button
+                        onclick="showModal('Use Cases', 'Highlight real-world scenarios, such as: Automating employee queries about company policies. Retrieving structured data from unstructured web content. Integrating with external sources like Wikipedia and DuckDuckGo.')">Read
+                        More</button>
                 </div>
             </li>
-            <li class="item" style="background-image: url('Images/Image(4).jpg');"">
+            <li class="item" style="background-image: url('Images/Image(4).jpg');">
                 <div class="content">
-                    <h2 class="title">Code Highlights</h2>
-                    <p class="description">Key code snippets or explanation of a core function.</p>
-                    <button>Read More</button>
-                </div>
-            </li>
-            <li class="item" style="background-image: url('Images/Image(5).jpg');">
-                <div class="content">
-                    <h2 class="title">Certification</h2>
-                    <p class="description">Overview of the Databricks certification and its relevance.</p>
-                    <button>Read More</button>
+                    <h1 class="title">Code Highlights</h1>
+                    <p class="description">Implemented a custom scraper and RAG system with Python to efficiently manage
+                        and query large document sets.</p>
+                    <button
+                        onclick="showModal('Code Highlights', 'Showcase critical parts of the code, such as: Web scraping logic with BeautifulSoup. Recursive text splitting for efficient chunk management. Spark DataFrame operations for Delta tables and optimization.')">Read
+                        More</button>
                 </div>
             </li>
         </ul>
@@ -49,9 +66,19 @@
             <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
             <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
         </nav>
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script src="scripts.js"></script>
     </main>
 </body>
+
 </html>
