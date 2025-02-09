@@ -9,13 +9,20 @@ function activate(e) {
     }
 }
 
-function showModal(title) {
+function showModal(title, text = "") {
     const modal = document.getElementById("modal");
     const modalTitle = document.getElementById("modal-title");
+    const modalText = document.getElementById("modal-text");
 
+    // Set the title and text content
     modalTitle.textContent = title;
 
-    // Just make the modal visible without overwriting modal-text
+    // Only set text content if it's provided
+    if (text) {
+        modalText.innerHTML = text;  // Use innerHTML to allow formatted text
+    }
+
+    // Make the modal visible
     modal.classList.add("visible");
 }
 
@@ -34,7 +41,7 @@ function closeModal() {
 }
 
 // Store the entire Python code as a multi-line string
-const codeSections  = [
+const codeSections = [
     {
         title: "Web Scraper",
         code: `
@@ -93,7 +100,7 @@ print(all_content)`
         code: `
 with open("smoothstack_text_data.txt", "w", encoding="utf-8") as file:
     file.write(all_content)`
-    }, 
+    },
     {
         title: "Setting Database Path",
         code: `
@@ -190,7 +197,7 @@ retriever = vector_store.as_retriever()
 
 # Define prompt template
 prompt_template = ChatPromptTemplate.from_messages([
-    ("system", """You are an assistant for answering questions. You have access to RAG Retrieval, Wikipedia, and DuckDuckGo search engine. Use the RAG for any queriy that is regarding smoothstack information. Use the other tools for anything that you don't know.
+    ("system", """You are an assistant for answering questions. You have access to RAG Retrieval, Wikipedia, and DuckDuckGo search engine. Use the RAG for any query that is regarding smoothstack information. Use the other tools for anything that you don't know.
     If the answer isn't clear, acknowledge that you don't know. Limit your response to three concise sentences.
      {context}"""),
     ("human", "{input}")
@@ -275,7 +282,7 @@ function loadAllCodeSections() {
         codeContainer.className = "code-container";
 
         // Add title
-        const titleElement = document.createElement("h3");
+        const titleElement = document.createElement("h2");
         titleElement.textContent = section.title;
         codeContainer.appendChild(titleElement);
 

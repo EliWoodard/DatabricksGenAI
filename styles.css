@@ -256,7 +256,7 @@ code {
     transform: translate(-50%, -50%);
     width: 60%;
     height: 60%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(24, 24, 24, 0.85);
     color: white;
     display: block;
     /* changed from flex */
@@ -279,6 +279,7 @@ code {
     position: relative;
     text-align: left;
     /* Force left alignment */
+    line-height: 1.8;
     width: 100%;
     padding-top: 2rem;
     /* So code isn't hidden under close button */
