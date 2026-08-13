@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="Images/Favicon.png">
     <title>Databricks Project Showcase</title>
@@ -14,106 +12,77 @@
 <body>
     <main>
         <ul class="slider">
-            <li class="item" style="background-image: url('Images/Image4.jpg');">
+            <li class="item">
+                <img class="slide-image" src="Images/Image4.jpg" width="1920" height="1080" alt="" aria-hidden="true">
                 <div class="content">
                     <h1 class="title">Certification</h1>
                     <p class="description">This project contributed to hands-on experience with Databricks and machine
                         learning pipelines, enhancing certification qualifications.</p>
-                    <button onclick="showModal('Certification', 
-                        'This project directly supports Databricks certification requirements—particularly for the Generative AI Engineer Associate—by demonstrating real-world use of Spark, Delta ' +
-                        'tables, and scalable machine learning workflows. We developed an end-to-end pipeline that ingests website data through a custom Python scraper, transforms it with Spark, ' +
-                        'and stores chunked documents in a Delta table for efficient query and retrieval. The project showcases the ability to work with advanced libraries ' +
-                        '(like LangChain and Databricks ML tools) for Retrieval-Augmented Generation (RAG), aligning with certification objectives for building enterprise-grade data and AI solutions. ' +
-                        'By integrating a vector store, LLM-based query chains, and additional search tools (e.g., DuckDuckGo, Wikipedia), the solution covers key competencies such as data engineering, ' + 
-                        'ML orchestration, and multi-source retrieval—essential skills for any Databricks certification involving Gen AI.'
-                        )">
+                    <button type="button" data-modal-id="certification">
                         Read More
                     </button>
                 </div>
             </li>
-            <li class="item" style="background-image: url('Images/Image5.jpg');">
+            <li class="item">
+                <img class="slide-image" src="Images/Image5.jpg" width="1920" height="1080" alt="" aria-hidden="true">
                 <div class="content">
                     <h1 class="title">Project Overview</h1>
                     <p class="description">Developed a chatbot application using LangChain and Databricks to perform
                         Retrieval-Augmented Generation (RAG). The project integrates multiple tools to enhance
                         information retrieval and data interaction.</p>
-                    <button onclick="showModal('Project Overview', 
-                    'The chatbot application leverages Databricks, LangChain, and external Python libraries to perform Retrieval-Augmented Generation (RAG). At a high level, the flow begins by ' +
-                    'scraping web data (e.g., corporate or public websites) with Python’s requests and BeautifulSoup, then chunking text into manageable segments using LangChain’s text splitters. ' +
-                    'These chunks are embedded, indexed in a vector store, and stored in a Delta table for scalable retrieval. Using Databricks notebooks and Spark, the pipeline ensures quick data ' +
-                    'processing and integration. When users query the chatbot, relevant chunks are retrieved, combined, and passed to a large language model—leveraging custom prompt templates and ' +
-                    'chain logic—to generate context-aware, concise responses. This end-to-end approach demonstrates how structured and unstructured data can be integrated in a sophisticated yet ' +
-                    'maintainable AI solution.'
-                        )">
+                    <button type="button" data-modal-id="project-overview">
                         Read More
                     </button>
                 </div>
             </li>
-            <li class="item" style="background-image: url('Images/Image1.jpg');">
+            <li class="item">
+                <img class="slide-image" src="Images/Image1.jpg" width="1920" height="1080" alt="" aria-hidden="true">
                 <div class="content">
                     <h1 class="title">Tools</h1>
                     <p class="description">Implemented a range of libraries and tools, including LangChain, Databricks,
                         and OpenAI, to handle document processing, embeddings, and search capabilities.</p>
-                    <button onclick="showModal('Tools', 
-                            'A diverse range of tools and libraries power this project:<br><br>' +
-                            '1. <strong>LangChain</strong>: Provides modular components (e.g., document loaders, text splitters, RAG chain) for building advanced conversational applications.<br>' +
-                            '2. <strong>Databricks</strong>: Manages data engineering tasks such as chunk storage in Delta tables and parallel processing via Spark, ensuring scalability and reliability.<br>' +
-                            '3. <strong>OpenAI &amp; ChatDatabricks</strong>: Offers embeddings for semantic search and a large language model to respond intelligently to user queries.<br>' +
-                            '4. <strong>BeautifulSoup &amp; Requests</strong>: Used for web scraping, retrieving raw HTML from target URLs, then parsing the DOM to extract relevant text.<br>' +
-                            '5. <strong>Chroma</strong>: Serves as the vector store for embedding-based retrieval, enabling accurate, context-driven responses.<br>' +
-                            '6. <strong>DuckDuckGo &amp; Wikipedia Tools</strong>: Integrates external knowledge sources, ensuring the chatbot can handle queries beyond the core dataset.<br><br>' +
-                            'By carefully combining these tools, the project handles data ingestion, transformation, vector retrieval, and conversation management in one seamless pipeline.'
-                        )">
+                    <button type="button" data-modal-id="tools">
                         Read More
                     </button>
                 </div>
             </li>
-            <li class="item" style="background-image: url('Images/Image2.jpg');">
+            <li class="item">
+                <img class="slide-image" src="Images/Image2.jpg" width="1920" height="1080" alt="" aria-hidden="true">
                 <div class="content">
                     <h1 class="title">Use Cases</h1>
                     <p class="description">Overview of real-world applications or problems solved.</p>
-                    <button onclick="showModal('Use Cases', 
-                            'This solution addresses multiple real-world scenarios:<br><br>' +
-                            '<ul style=&quot;padding-left: 1.5rem; margin-top: 0;&quot;>' +
-                                '<li><strong>Internal Knowledge Base</strong>:&nbsp;Automate employee queries about products, policies, and processes by scraping internal documentation and storing it for quick retrieval.</li>' +
-                                '<li><strong>Customer Support</strong>:&nbsp;Provide context-aware support responses by integrating relevant articles from internal docs, Wikipedia, or web search tools.</li>' +
-                                '<li><strong>Research &amp; Insights</strong>:&nbsp;Quickly search large text corpora—like scholarly articles or compliance documentation—using advanced chunking, embedding, and retrieval.</li>' +
-                                '<li><strong>External Data Integration</strong>:&nbsp;Pull information from the web (e.g., DuckDuckGo or Wikipedia) to enrich local data, giving users more comprehensive and up-to-date answers.</li>' +
-                            '</ul>' +
-                            '<br>Whether for enterprise Q&amp;A, real-time support, or data-driven research, the platform’s combination of RAG, vector storage, and Spark-based orchestration is designed to handle large-scale, unstructured text with ease.'
-                        )">
+                    <button type="button" data-modal-id="use-cases">
                         Read More
                     </button>
                 </div>
             </li>
-            <li class="item" style="background-image: url('Images/Image3.jpg');">
+            <li class="item">
+                <img class="slide-image" src="Images/Image3.jpg" width="3300" height="2200" alt="" aria-hidden="true">
                 <div class="content">
                     <h1 class="title">Code Highlights</h1>
                     <p class="description">Implemented a custom scraper and RAG system with Python to efficiently manage
                         and query large document sets.</p>
-                    <button onclick="loadAllCodeSections()">Read More</button>
+                    <button type="button" data-modal-id="code-highlights">Read More</button>
                 </div>
             </li>
         </ul>
-        <nav class="nav">
-            <ion-icon onclick="closeModal()" class="btn prev" name="arrow-back-outline"></ion-icon>
-            <ion-icon onclick="closeModal()" class="btn next" name="arrow-forward-outline"></ion-icon>
+        <nav class="nav" aria-label="Slide controls">
+            <button type="button" class="btn prev" aria-label="Previous slide">
+                <span class="icon" aria-hidden="true">&larr;</span>
+            </button>
+            <button type="button" class="btn next" aria-label="Next slide">
+                <span class="icon" aria-hidden="true">&rarr;</span>
+            </button>
         </nav>
 
         <div id="modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
+                <button type="button" class="close" aria-label="Close modal">&times;</button>
                 <h1 id="modal-title"></h1>
-                <p id="modal-text"></p>
+                <div id="modal-text" class="modal-body"></div>
             </div>
         </div>
 
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="scripts.js"></script>
 
     </main>
