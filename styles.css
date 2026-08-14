@@ -25,11 +25,10 @@ html {
 }
 
 body {
-    min-height: 100svh;
     margin: 0;
     display: grid;
     place-items: stretch;
-    overflow: hidden;
+    overflow: auto;
     background: var(--page-bg);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
@@ -42,7 +41,8 @@ button {
 main {
     position: relative;
     width: 100%;
-    min-height: 100svh;
+    min-height: 400px;
+    min-width: 400px;
     height: 100dvh;
     overflow: hidden;
     background: #02050a;
@@ -374,21 +374,21 @@ pre code {
 
 @media (max-width: 900px) {
     :root {
-        --thumb-width: 8vh;
-        --thumb-height: 18vh;
+        --thumb-width: max(8vh, 32px);
+        --thumb-height: max(18vh, 72px);
         --content-width: 42vh;
         --thumb-start: calc(50% - 1.6vw - ((var(--thumb-width)*1.5)));
     }
 
     .content {
-    top: 10%;
-    width: 100%;
-    text-align: center;
-    color: var(--text);
-    text-shadow: 0 0.18rem 0.5rem rgba(0, 0, 0, 0.55);
-    z-index: 2;
-    left: 0;
-    --content-translate: 0;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        color: var(--text);
+        text-shadow: 0 0.18rem 0.5rem rgba(0, 0, 0, 0.55);
+        z-index: 2;
+        left: 0;
+        --content-translate: 0;
     }
 
     .description {
