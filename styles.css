@@ -9,7 +9,7 @@
     --gutter: clamp(1rem, 4vw, 3rem);
     --thumb-width: clamp(9rem, 15vw, 12.5rem);
     --thumb-height: clamp(13rem, 24vw, 18.75rem);
-    --thumb-gap: clamp(0.75rem, 1.6vw, 1.25rem);
+    --thumb-gap: 1.6vw;
     --thumb-start: 50%;
     --content-width: clamp(18rem, 31vw, 27rem);
     --control-size: clamp(2.75rem, 5vw, 3.25rem);
@@ -374,85 +374,37 @@ pre code {
 
 @media (max-width: 900px) {
     :root {
-        --thumb-width: clamp(7rem, 18vw, 10rem);
-        --thumb-height: clamp(10rem, 29vw, 16rem);
-        --content-width: clamp(17rem, 42vw, 24rem);
-        --thumb-start: calc(100% - var(--gutter) - var(--thumb-width) - var(--thumb-gap) - var(--thumb-width) - var(--thumb-gap) - var(--thumb-width));
+        --thumb-width: 8vh;
+        --thumb-height: 18vh;
+        --content-width: 42vh;
+        --thumb-start: calc(50% - 1.6vw - ((var(--thumb-width)*1.5)));
     }
-}
 
-@media (max-width: 650px) {
-    :root {
-        --gutter: clamp(1rem, 5vw, 1.5rem);
-        --thumb-width: clamp(5.75rem, 26vw, 8rem);
-        --thumb-height: clamp(8rem, 31vh, 11.25rem);
-        --thumb-gap: clamp(0.625rem, 3vw, 1rem);
+    .content {
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: var(--text);
+    text-shadow: 0 0.18rem 0.5rem rgba(0, 0, 0, 0.55);
+    z-index: 2;
+    left: 0;
+    --content-translate: 0;
+    }
+
+    .description {
+        margin: 0;
+        max-width: 100%;
+        padding: 1rem;
+        font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+        line-height: 1.7;
+    }
+
+    .content button {
+        width: 80%;
     }
 
     .item {
-        top: auto;
-        bottom: clamp(5.5rem, 12dvh, 7rem);
-        transform: none;
-    }
-
-    .item:nth-child(1),
-    .item:nth-child(2) {
-        top: 0;
-        bottom: auto;
-        transform: none;
-    }
-
-    .item:nth-child(3) {
-        left: var(--gutter);
-    }
-
-    .item:nth-child(4) {
-        left: calc(var(--gutter) + var(--thumb-width) + var(--thumb-gap));
-    }
-
-    .item:nth-child(5) {
-        left: calc(var(--gutter) + var(--thumb-width) + var(--thumb-gap) + var(--thumb-width) + var(--thumb-gap));
-    }
-
-    .item:nth-child(2)::before {
-        background: linear-gradient(180deg, rgba(2, 6, 12, 0.84) 0%, rgba(2, 6, 12, 0.54) 48%, rgba(2, 6, 12, 0.3) 74%, rgba(2, 6, 12, 0.66) 100%);
-    }
-
-    .content {
-        --content-translate: 0px;
-        top: clamp(4rem, 12dvh, 6.5rem);
-        width: min(22rem, calc(100% - var(--gutter) - var(--gutter)));
-    }
-
-    .title {
-        font-size: clamp(1.85rem, 10vw, 3rem);
-    }
-
-    .description {
-        margin: 0.85rem 0 1.15rem;
-        font-size: 0.95rem;
-        line-height: 1.55;
-    }
-}
-
-@media (max-width: 380px) {
-    .description {
-        font-size: 0.88rem;
-    }
-}
-
-@media (max-height: 620px) and (max-width: 760px) {
-    :root {
-        --thumb-height: clamp(6.75rem, 25vh, 9rem);
-    }
-
-    .content {
-        top: 2rem;
-    }
-
-    .description {
-        max-width: 24rem;
-        line-height: 1.45;
+        top: 65%;
     }
 }
 
